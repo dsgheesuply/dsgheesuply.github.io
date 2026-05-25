@@ -24,7 +24,25 @@ nav{
 }
 nav h2{font-size:24px}
 nav ul{display:flex;gap:20px;list-style:none}
+
 nav a{color:white;text-decoration:none;font-weight:bold}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .cart-count{background:red;border-radius:50%;padding:3px 7px;font-size:12px}
 
 /* HERO */
@@ -78,13 +96,21 @@ left:-150%;
 width:400%;
 height:400%;
 
+
+
 background:
 conic-gradient(
 red,
+orange,
+yellow,
+lime,
+cyan,
 blue,
-lime
-
+violet,
+red
 );
+
+
 
 animation:rotateBorder 4s linear infinite;
 z-index:0;
@@ -123,15 +149,121 @@ transform:rotate(360deg);
 }
 
 
+<!--.card button{-->
+<!--  margin-top:10px;-->
+<!--  background:#1faa59;-->
+<!--  color:white;-->
+<!--  border:none;-->
+<!--  padding:8px 15px;-->
+<!--  border-radius:5px;-->
+<!--  cursor:pointer;-->
+<!--}-->
+
+
+
+
+
+/* FLOWING BLUE + RED GLOW BUTTON */
+
 .card button{
-  margin-top:10px;
-  background:#1faa59;
-  color:white;
-  border:none;
-  padding:8px 15px;
-  border-radius:5px;
-  cursor:pointer;
+
+position:relative;
+overflow:hidden;
+
+margin-top:10px;
+
+padding:12px 22px;
+
+border:none;
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:15px;
+font-weight:bold;
+
+color:white;
+
+/* Blue → Red Flow */
+background:
+linear-gradient(
+90deg,
+blue,
+green
+
+
+);
+
+background-size:350% 100%;
+
+animation:flowGlow 4s linear infinite;
+
+transition:
+transform .3s ease,
+box-shadow .3s ease;
+
+box-shadow:
+0 0 15px rgba(0,77,255,.8),
+0 0 35px rgba(41,121,255,.8),
+0 0 65px rgba(255,23,68,.8);
+
 }
+
+
+/* flowing animation */
+
+@keyframes flowGlow{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:100% 50%;
+}
+
+}
+
+
+/* Hover */
+
+.card button:hover{
+
+transform:
+translateY(-5px)
+scale(1.05);
+
+box-shadow:
+0 0 25px #004dff,
+0 0 55px #00c2ff,
+0 0 95px #ff1744;
+
+filter:
+brightness(1.15);
+
+}
+
+
+/* Click */
+
+.card button:active{
+
+transform:
+translateY(2px)
+scale(.95);
+
+box-shadow:
+0 0 14px white;
+
+}
+
+
+
+
+
+
+
+
 
 /* CART */
 .cart{
