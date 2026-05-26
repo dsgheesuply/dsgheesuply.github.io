@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DailyBasket Grocery2</title>
+<title>DailyBasket Grocery</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
@@ -24,32 +24,14 @@ nav{
 }
 nav h2{font-size:24px}
 nav ul{display:flex;gap:20px;list-style:none}
-
 nav a{color:white;text-decoration:none;font-weight:bold}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .cart-count{background:red;border-radius:50%;padding:3px 7px;font-size:12px}
 
 <!--/* HERO */-->
 <!--.hero{-->
 <!--  height:70vh;-->
-<!--  background:url("ghee-removebg-preview.png") center/cover;-->
-<!--  display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;out-fit:contain-->
+<!--  background:url("https://images.unsplash.com/photo-1542838132-92c53300491e") center/cover;-->
+<!--  display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center-->
 <!--}-->
 <!--.hero h1{font-size:42px;text-shadow:0 0 10px black}-->
 <!--.hero button{-->
@@ -161,104 +143,123 @@ transform:rotate(360deg);
 
 
 
-
-
-/* FLOWING BLUE + RED GLOW BUTTON */
+/* GLOWING ADD TO CART BUTTON */
 
 .card button{
-
 position:relative;
 overflow:hidden;
 
 margin-top:10px;
-
-padding:12px 22px;
+padding:10px 18px;
 
 border:none;
-border-radius:12px;
+border-radius:8px;
+
+color:white;
+font-weight:bold;
+font-size:15px;
 
 cursor:pointer;
 
-font-size:15px;
-font-weight:bold;
+background:#111;
 
-color:white;
+z-index:2;
+}
 
-/* Blue → Red Flow */
+/* animated glow border */
+.card button::before{
+content:"";
+
+position:absolute;
+
+top:-200%;
+left:-200%;
+
+width:500%;
+height:500%;
+
+
+
+
+
+
 background:
-linear-gradient(
-90deg,
-blue,
-green
-
-
+conic-gradient(
+gold,
+#ff4d4d,
+#8a2be2,
+gold
 );
 
-background-size:350% 100%;
 
-animation:flowGlow 4s linear infinite;
 
-transition:
-transform .3s ease,
-box-shadow .3s ease;
 
+
+
+
+
+
+
+
+animation:btnGlow 3s linear infinite;
+
+z-index:-2;
+}
+
+/* inner button layer */
+.card button::after{
+content:"";
+
+position:absolute;
+
+top:2px;
+left:2px;
+right:2px;
+bottom:2px;
+
+background:#1faa59;
+
+border-radius:7px;
+
+z-index:-1;
+}
+
+/* extra glow */
+.card button{
 box-shadow:
-0 0 15px rgba(0,77,255,.8),
-0 0 35px rgba(41,121,255,.8),
-0 0 65px rgba(255,23,68,.8);
+0 0 10px rgba(31,170,89,.8),
+0 0 20px rgba(31,170,89,.6),
+0 0 35px rgba(31,170,89,.4);
 
+transition:.3s;
 }
-
-
-/* flowing animation */
-
-@keyframes flowGlow{
-
-0%{
-background-position:0% 50%;
-}
-
-100%{
-background-position:100% 50%;
-}
-
-}
-
-
-/* Hover */
 
 .card button:hover{
 
-transform:
-translateY(-5px)
-scale(1.05);
+transform:translateY(-3px);
 
 box-shadow:
-0 0 25px #004dff,
-0 0 55px #00c2ff,
-0 0 95px #ff1744;
-
-filter:
-brightness(1.15);
+0 0 20px red,
+0 0 35px orange,
+0 0 50px cyan;
 
 }
-
-
-/* Click */
 
 .card button:active{
-
-transform:
-translateY(2px)
-scale(.95);
-
-box-shadow:
-0 0 14px white;
-
+transform:scale(.95);
 }
 
+@keyframes btnGlow{
 
+from{
+transform:rotate(0deg);
+}
 
+to{
+transform:rotate(360deg);
+}
+
+}
 
 
 
@@ -298,7 +299,7 @@ footer{background:#1faa59;color:white;text-align:center;padding:20px}
 
 <!--&lt;!&ndash; HERO &ndash;&gt;-->
 <!--<section class="hero">-->
-<!--<h1>Dairy saras ghee</h1>-->
+<!--<h1>Fresh Groceries Delivered in 30 Minutes</h1>-->
 <!--<button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>-->
 <!--</section>-->
 
@@ -433,6 +434,7 @@ let products=[
 {name:"DS Ghee JAR 1ltr",price:400,img:"https://kdpghee.in/wp-content/uploads/2019/01/FINAL-DAIRY-SARAS-DESI-GHEE-3-JAR-1-LTR-1-300x300.webp",desc:"Dairy Saras Ghee."},
 {name:"DS Ghee Tin 5kg 400 RS/kg",price:2000,img:"https://kdpghee.in/wp-content/uploads/2019/01/FINAL-DAIRY-SARAS-DESI-GHEE-TUB-1-1.webp",desc:"Dairy Saras Ghee."},
 {name:"DS Ghee Tin 15kg 400 RS/kg",price:6000,img:"https://kdpghee.in/wp-content/uploads/2019/01/FINAL-DAIRY-SARAS-DESI-GHEE-TUB-1-1.webp",desc:"Dairy Saras Ghee."},
+
 ]
 let cart={}
 function loadProducts(){
