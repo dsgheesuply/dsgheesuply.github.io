@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DailyBasket Grocery</title>
+<title>DailyBasket Grocery2</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
@@ -45,16 +45,16 @@ nav a{color:white;text-decoration:none;font-weight:bold}
 
 .cart-count{background:red;border-radius:50%;padding:3px 7px;font-size:12px}
 
-/* HERO */
-.hero{
-  height:70vh;
-  background:url("https://images.unsplash.com/photo-1542838132-92c53300491e") center/cover;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center
-}
-.hero h1{font-size:42px;text-shadow:0 0 10px black}
-.hero button{
-  margin-top:20px;padding:15px 30px;background:#ff9800;border:none;color:white;font-size:18px;border-radius:8px;cursor:pointer
-}
+<!--/* HERO */-->
+<!--.hero{-->
+<!--  height:70vh;-->
+<!--  background:url("ghee-removebg-preview.png") center/cover;-->
+<!--  display:flex;flex-direction:column;justify-content:center;align-items:center;color:white;text-align:center;out-fit:contain-->
+<!--}-->
+<!--.hero h1{font-size:42px;text-shadow:0 0 10px black}-->
+<!--.hero button{-->
+<!--  margin-top:20px;padding:15px 30px;background:#ff9800;border:none;color:white;font-size:18px;border-radius:8px;cursor:pointer-->
+<!--}-->
 
 /* PRODUCTS */
 .products{padding:40px;text-align:center}
@@ -296,11 +296,11 @@ footer{background:#1faa59;color:white;text-align:center;padding:20px}
 </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-<h1>Fresh Groceries Delivered in 30 Minutes</h1>
-<button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
-</section>
+<!--&lt;!&ndash; HERO &ndash;&gt;-->
+<!--<section class="hero">-->
+<!--<h1>Dairy saras ghee</h1>-->
+<!--<button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>-->
+<!--</section>-->
 
 <!-- PRODUCTS -->
 <section id="products" class="products">
@@ -429,18 +429,10 @@ background:rgba(0,0,0,0.7);justify-content:center;align-items:center;z-index:999
   </div>
 </div><script>
 let products=[
-{name:"Atta 5kg",price:260,img:"https://images.unsplash.com/photo-1608198093002-ad4e005484ec",desc:"Fresh chakki atta perfect for soft rotis."},
-{name:"Rice 5kg",price:520,img:"https://images.unsplash.com/photo-1586201375761-83865001e31c",desc:"Premium basmati rice long grain."},
-{name:"Sugar 1kg",price:45,img:"https://images.unsplash.com/photo-1587731556938-38755b4803a6",desc:"Refined sulphur free sugar."},
-{name:"Salt 1kg",price:20,img:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",desc:"Iodized healthy salt."},
-{name:"Mustard Oil",price:170,img:"https://images.unsplash.com/photo-1615485290382-441e4d049cb5",desc:"Pure cold pressed mustard oil."},
-{name:"Desi Ghee",price:650,img:"https://images.unsplash.com/photo-1604908811893-0a8e33e32e1e",desc:"Rich aroma cow ghee."},
-{name:"Toor Dal",price:140,img:"https://images.unsplash.com/photo-1615485737651-5a7a9a4a26ac",desc:"Protein rich arhar dal."},
-{name:"Besan",price:90,img:"https://images.unsplash.com/photo-1615485500704-8e9909b3c735",desc:"Fine gram flour for snacks."},
-{name:"Broom",price:80,img:"https://images.unsplash.com/photo-1581578731548-c64695cc6952",desc:"Strong long lasting broom."},
-{name:"Pocha Mop",price:120,img:"https://images.unsplash.com/photo-1595433562696-84c3b1f5b5a5",desc:"Super absorbent floor mop."},
-{name:"Dishwash Liquid",price:110,img:"https://images.unsplash.com/photo-1581579185169-25c62a36e57b",desc:"Removes grease instantly."},
-{name:"Surf 1kg",price:130,img:"https://images.unsplash.com/photo-1626808642875-0aa545482dfb",desc:"Powerful detergent powder."}
+{name:"DS Ghee 1ltr",price:400,img:"https://mir-s3-cdn-cf.behance.net/projects/404/26028a239385209.Y3JvcCwxOTQyLDE1MTksMjgsMA.png",desc:"Dairy Saras Ghee."},
+{name:"DS Ghee JAR 1ltr",price:400,img:"https://kdpghee.in/wp-content/uploads/2019/01/FINAL-DAIRY-SARAS-DESI-GHEE-3-JAR-1-LTR-1-300x300.webp",desc:"Dairy Saras Ghee."},
+{name:"DS Ghee Tin 5kg 400 RS/kg",price:2000,img:"https://kdpghee.in/wp-content/uploads/2019/01/FINAL-DAIRY-SARAS-DESI-GHEE-TUB-1-1.webp",desc:"Dairy Saras Ghee."},
+{name:"DS Ghee Tin 15kg 400 RS/kg",price:6000,img:"https://kdpghee.in/wp-content/uploads/2019/01/FINAL-DAIRY-SARAS-DESI-GHEE-TUB-1-1.webp",desc:"Dairy Saras Ghee."},
 ]
 let cart={}
 function loadProducts(){
